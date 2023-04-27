@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class AdShops : MonoBehaviour
 {
     public static bool inAdShop;
-    public GameObject Adshop;
-    public Image Ad1;
-    public Image Ad2;
-    public Image Ad3;
-    public GameObject SettingsButton;
-    public GameObject Leaderboard_Button;
+    [SerializeField] GameObject Adshop;
+    [SerializeField] GameObject Ad1;
+    [SerializeField] GameObject Ad2;
+    [SerializeField] GameObject Ad3;
+    [SerializeField] GameObject SettingsButton;
+    [SerializeField] GameObject Leaderboard_Button;
     void Start()
     {
         Adshop.SetActive(false);

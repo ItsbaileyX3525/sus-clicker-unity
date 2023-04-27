@@ -22,7 +22,7 @@ public class GameEvents : MonoBehaviour
         ClickSound = GetComponent<AudioSource>();
         LoadData();
         susText.text = "Suses: " + clicks;
-        int update1 = PlayerPrefs.GetInt("update2");
+        int update1 = PlayerPrefs.GetInt("update3");
         if (update1 != 1)
         {
             OpenLog();
@@ -65,8 +65,9 @@ public class GameEvents : MonoBehaviour
         // Create an instance of DataSave and assign the values of clicks and closedUpdateLog
         DataSave data = new DataSave(clicks, GameMultiply.multiplier, GameMultiply.cost,
         Generate.Greens, Generate.Callums, Generate.Taylors, Generate.gen1Cost, Generate.CallumCost, Generate.TaylorCost,
-        Generate.Nathaniels, Generate.NathanielCost, Generate.FloppaCost,Generate.Floppas,
-        Generate.BingusCost,Generate.Bingus,Generate.SoggaCost,Generate.Soggas,Generate.SaulCost,Generate.Sauls,
+        Generate.Nathaniels, Generate.NathanielCost, Generate.Wilsons, Generate.WilsonCost, 
+        Generate.FloppaCost,Generate.Floppas, Generate.BingusCost,Generate.Bingus,
+        Generate.SoggaCost,Generate.Soggas,Generate.SaulCost,Generate.Sauls,
         Generate.JesseCost,Generate.Jesses,Generate.WalterCost,Generate.Walters);
 
         // Convert the instance to JSON and save to file
@@ -97,29 +98,21 @@ public class GameEvents : MonoBehaviour
             Generate.gen1Cost = data.GreenCost;
             Generate.CallumCost = data.CallumCost;
             Generate.TaylorCost = data.TaylorCost;
-            Generate.gen1CostPre = data.GreenCost;
-            Generate.CallumCostPre = data.CallumCost;
-            Generate.TaylorCostPre = data.TaylorCost;
             Generate.NathanielCost = data.NathanielCost;
-            Generate.NathanielCostPre = data.NathanielCost;
             Generate.Nathaniels = data.Nathaniels;
+            Generate.WilsonCost = data.WilsonCost;
+            Generate.Wilsons = data.Wilsons;
             Generate.FloppaCost = data.FloppaCost;
-            Generate.FloppaCostPre = data.FloppaCost;
             Generate.Floppas = data.Floppas;
             Generate.BingusCost = data.BingusCost;
-            Generate.BingusCostPre = data.BingusCost;
             Generate.Bingus = data.Bingus;
             Generate.SoggaCost = data.SoggaCost;
-            Generate.SoggaCostPre = data.SoggaCost;
             Generate.Soggas = data.Soggas;
             Generate.SaulCost = data.SaulCost;
-            Generate.SaulCostPre = data.SaulCost;
             Generate.Sauls = data.Sauls;
             Generate.JesseCost = data.JesseCost;
-            Generate.JesseCostPre = data.JesseCost;
             Generate.Jesses = data.Jesses;
             Generate.WalterCost = data.WalterCost;
-            Generate.WalterCostPre = data.WalterCost;
             Generate.Walters = data.Walters;
         }
 
@@ -129,8 +122,8 @@ public class GameEvents : MonoBehaviour
     {
         closeUpdateLog.SetActive(false);
         update1=1;
-        PlayerPrefs.SetInt("update2", update1);
-        PlayerPrefs.DeleteKey("updated1");
+        PlayerPrefs.SetInt("update3", update1);
+        PlayerPrefs.DeleteKey("updated2");
     }
     public void OpenLog()
     {

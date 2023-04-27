@@ -35,20 +35,16 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
-        Debug.Log("Loading Ad: " + _adUnitId);
         Advertisement.Load(_adUnitId, this);
 
-        Debug.Log("Loading Ad: " + _adUnitId2);
         Advertisement.Load(_adUnitId2, this);
 
-        Debug.Log("Loading Ad: " + _adUnitId3);
         Advertisement.Load(_adUnitId3, this);
     }
  
     // If the ad successfully loads, add a listener to the button and enable it:
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
-        Debug.Log("Ad Loaded: " + adUnitId);
             
         //// Button 1 ////
         if (adUnitId.Equals(_adUnitId))
@@ -115,7 +111,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            GameEvents.clicks *= 2;
+            GameEvents.clicks *= 3/2;
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
         }
@@ -130,14 +126,16 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         }
         if (adUnitId.Equals(_adUnitId3) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            Debug.Log("Unity Ads Rewarded Ad Completed, reward 3");
-            Generate.gen1Cost = Generate.gen1Cost/2;
-            Generate.CallumCost = Generate.CallumCost/2;
-            Generate.TaylorCost = Generate.TaylorCost/2;
-            Generate.NathanielCost = Generate.NathanielCost/2;
+            Generate.gen1Cost = Generate.gen1Cost / 2;
+            Generate.CallumCost = Generate.CallumCost / 2;
+            Generate.TaylorCost = Generate.TaylorCost / 2;
+            Generate.NathanielCost = Generate.NathanielCost / 2;
+            Generate.WilsonCost = Generate.WilsonCost / 2;
             Generate.FloppaCost = Generate.FloppaCost / 2;
+            Generate.BingusCost = Generate.BingusCost / 2;
             Generate.SoggaCost = Generate.SoggaCost / 2;
             Generate.SaulCost = Generate.SaulCost / 2;
+            Generate.JesseCost = Generate.JesseCost / 2;
             Generate.WalterCost = Generate.WalterCost / 2;
             Advertisement.Load(_adUnitId3, this);
         }
@@ -146,7 +144,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // Implement Load and Show Listener error callbacks:
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)
     {
-        Debug.Log($"Error loading Ad Unit {adUnitId}: {error.ToString()} - {message}");
         // Use the error details to determine whether to try to load another ad.
     }
  

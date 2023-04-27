@@ -9,6 +9,7 @@ public class GameMultiply : MonoBehaviour
     public TMP_Text Gen2;
     public TMP_Text Gen3;
     public TMP_Text Gen4;
+    public TMP_Text Gen5;
     public TMP_Text GenFloppa;
     public TMP_Text GenBingus;
     public TMP_Text GenSogga;
@@ -26,7 +27,7 @@ public class GameMultiply : MonoBehaviour
 
             GameEvents.clicks = 0;
             multiplier++;
-            cost = cost * 5 / 4;
+            cost *= 3;
         }
     }
 public static string FormatNumberWithAbbreviation(double number)
@@ -74,6 +75,7 @@ public static string FormatNumberWithAbbreviation(double number)
         string formattedCallumCost = FormatNumberWithAbbreviation(Generate.CallumCost);
         string formattedTaylorCost = FormatNumberWithAbbreviation(Generate.TaylorCost);
         string formattedNathanielCost = FormatNumberWithAbbreviation(Generate.NathanielCost);
+        string formattedWilsonCost = FormatNumberWithAbbreviation(Generate.WilsonCost);
         string formattedFloppaCost = FormatNumberWithAbbreviation(Generate.FloppaCost);
         string formattedBingusCost = FormatNumberWithAbbreviation(Generate.BingusCost);
         string fromattedSoggaCost = FormatNumberWithAbbreviation(Generate.SoggaCost);
@@ -88,6 +90,7 @@ public static string FormatNumberWithAbbreviation(double number)
         Gen2.text = "Cost: " + formattedCallumCost;
         Gen3.text = "Cost: " + formattedTaylorCost;
         Gen4.text = "Cost: " + formattedNathanielCost;
+        Gen5.text = "Cost: " + formattedWilsonCost;
         GenFloppa.text = "Cost: " + formattedFloppaCost;
         GenBingus.text = "Cost: " + formattedBingusCost;
         GenSogga.text = "Cost: " + fromattedSoggaCost;

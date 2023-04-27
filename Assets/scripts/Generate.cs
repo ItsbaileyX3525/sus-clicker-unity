@@ -16,6 +16,9 @@ public class Generate : MonoBehaviour
     public static float NathanielCost = 1500.0f;
     public static uint Nathaniels = 0u;
     public static float NathanielCostPre = 1500.0f;
+    public static float WilsonCost = 5000.0f;
+    public static uint Wilsons = 0u;
+    public static float WilsonCostPre = 5000.0f;
     public static float FloppaCost = 1000000.0f;
     public static uint Floppas = 0u;
     public static float FloppaCostPre = 1000000.0f;
@@ -64,6 +67,12 @@ public class Generate : MonoBehaviour
             NathanielCost = 1500.0f;
             Nathaniels = 0u;
             NathanielCostPre = 1500.0f;
+        }
+        if (WilsonCost == 0.0f || Wilsons == 0)
+        {
+            WilsonCost = 1500.0f;
+            Wilsons = 0u;
+            WilsonCostPre = 1500.0f;
         }
         if (FloppaCost == 0.0f || Floppas == 0)
         {
@@ -142,6 +151,16 @@ public class Generate : MonoBehaviour
             Nathaniels++;
         }
     }
+    public void onClickWilsons()
+    {
+        if (GameEvents.clicks >= WilsonCost)
+        {
+            GameEvents.clicks -= (ulong)WilsonCost;
+            WilsonCostPre *= 1.1f;
+            WilsonCost = (ulong)Math.Round(WilsonCostPre);
+            Wilsons++;
+        }
+    }
     public void onClickFloppas()
     {
         if (GameEvents.clicks >= FloppaCost)
@@ -214,18 +233,20 @@ public class Generate : MonoBehaviour
             GameEvents.clicks += amount3 * GameMultiply.multiplier;
             ulong amount4 = Nathaniels * 18;
             GameEvents.clicks += amount4 * GameMultiply.multiplier;
-            ulong amount5 = Floppas * 1000;
+            ulong amount5 = Wilsons * 45;
             GameEvents.clicks += amount5 * GameMultiply.multiplier;
-            ulong amount6 = Bingus * 5000;
+            ulong amount6 = Floppas * 1000;
             GameEvents.clicks += amount6 * GameMultiply.multiplier;
-            ulong amount7 = Soggas * 12000;
+            ulong amount7 = Bingus * 5000;
             GameEvents.clicks += amount7 * GameMultiply.multiplier;
-            ulong amount8 = Sauls * 20000;
+            ulong amount8 = Soggas * 12000;
             GameEvents.clicks += amount8 * GameMultiply.multiplier;
-            ulong amount9 = Jesses * 30000;
+            ulong amount9 = Sauls * 20000;
             GameEvents.clicks += amount9 * GameMultiply.multiplier;
-            ulong amount10 = Walters * 50000;
+            ulong amount10 = Jesses * 30000;
             GameEvents.clicks += amount10 * GameMultiply.multiplier;
+            ulong amount11 = Walters * 50000;
+            GameEvents.clicks += amount11 * GameMultiply.multiplier;
             if (GameEvents.genFrezyActive){
                 yield return new WaitForSeconds(0.5f);
             }else{

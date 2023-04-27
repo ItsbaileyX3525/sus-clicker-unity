@@ -2,9 +2,9 @@ using UnityEngine;
 public class Codes : MonoBehaviour
 {
     private string Input;
-    private string Redeemed5;
     private string Redeemed6;
     private string Redeemed7;
+    private string Redeemed8;
     public void InputText(string s)
     {
         Input = s;
@@ -37,17 +37,17 @@ public class Codes : MonoBehaviour
             Generate.SaulCost = 2000000000.0f;
             Generate.SaulCostPre = 2000000000.0f;
             Generate.Sauls = 0u;
-        }else if (Input == "BigUpdateBoys" && Redeemed5 != "True")
-        {
-            GameEvents.clicks += 3500000;
-            Generate.FloppaCost -= 10000000.0f;
-            SaveVariables();
-        }else if (Input == "SorryForBugs")
+        }
+        if (Input == "SorryForBugs" && Redeemed6 != "True")
         {
             GameEvents.clicks += 5000000;
             Generate.SoggaCost /= 2;
             SaveVariables();
-        }else if (Input == "AnotherUpdate")
+        }else if (Input == "AnotherUpdate" && Redeemed7 != "True")
+        {
+            GameEvents.clicks += 500000000;
+            SaveVariables();
+        }else if (Input == "WilsonUpdate" && Redeemed8 != "True")
         {
             GameEvents.clicks += 500000000;
             SaveVariables();
@@ -59,18 +59,18 @@ public class Codes : MonoBehaviour
     }
     public void SaveVariables()
     {
-        PlayerPrefs.SetString("RedeemedCodeFive", Redeemed5);
         PlayerPrefs.SetString("RedeemedCodeSix", Redeemed6);
         PlayerPrefs.SetString("RedeemedCodeSeven", Redeemed7);
+        PlayerPrefs.SetString("RedeemedCodeEight", Redeemed8);
     }
     void LoadVariables()
     {
-        PlayerPrefs.DeleteKey("RedeemedCodeThree");
-        string CodeFive = PlayerPrefs.GetString("RedeemedCodeFive");
+        PlayerPrefs.DeleteKey("RedeemedCodeFive");
         string CodeSix = PlayerPrefs.GetString("RedeemedCodeSix");
         string CodeSeven = PlayerPrefs.GetString("RedeemedCodeSeven");
-        Redeemed5 = CodeFive;
+        string CodeEight = PlayerPrefs.GetString("RedeemedCodeEight");
         Redeemed6 = CodeSix;
         Redeemed7 = CodeSeven;
+        Redeemed8 = CodeEight;
     }
 }
