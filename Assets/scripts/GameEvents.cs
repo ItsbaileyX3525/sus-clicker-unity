@@ -98,21 +98,32 @@ public class GameEvents : MonoBehaviour
             Generate.gen1Cost = data.GreenCost;
             Generate.CallumCost = data.CallumCost;
             Generate.TaylorCost = data.TaylorCost;
+            Generate.gen1CostPre = data.GreenCost;
+            Generate.CallumCostPre = data.CallumCost;
+            Generate.TaylorCostPre = data.TaylorCost;
             Generate.NathanielCost = data.NathanielCost;
+            Generate.NathanielCostPre = data.NathanielCost;
             Generate.Nathaniels = data.Nathaniels;
             Generate.WilsonCost = data.WilsonCost;
+            Generate.WilsonCostPre = data.WilsonCost;
             Generate.Wilsons = data.Wilsons;
             Generate.FloppaCost = data.FloppaCost;
+            Generate.FloppaCostPre = data.FloppaCost;
             Generate.Floppas = data.Floppas;
             Generate.BingusCost = data.BingusCost;
+            Generate.BingusCostPre = data.BingusCost;
             Generate.Bingus = data.Bingus;
             Generate.SoggaCost = data.SoggaCost;
+            Generate.SoggaCostPre = data.SoggaCost;
             Generate.Soggas = data.Soggas;
             Generate.SaulCost = data.SaulCost;
+            Generate.SaulCostPre = data.SaulCost;
             Generate.Sauls = data.Sauls;
             Generate.JesseCost = data.JesseCost;
+            Generate.JesseCostPre = data.JesseCost;
             Generate.Jesses = data.Jesses;
             Generate.WalterCost = data.WalterCost;
+            Generate.WalterCostPre = data.WalterCost;
             Generate.Walters = data.Walters;
         }
 
