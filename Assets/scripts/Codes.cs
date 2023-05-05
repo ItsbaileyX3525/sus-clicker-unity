@@ -2,9 +2,9 @@ using UnityEngine;
 public class Codes : MonoBehaviour
 {
     private string Input;
-    private string Redeemed6;
     private string Redeemed7;
     private string Redeemed8;
+    private string Redeemed9;
     public void InputText(string s)
     {
         Input = s;
@@ -38,11 +38,11 @@ public class Codes : MonoBehaviour
             Generate.SaulCostPre = 2000000000.0f;
             Generate.Sauls = 0u;
         }
-        if (Input == "SorryForBugs" && Redeemed6 != "True")
+        if (Input == "BuckleMyShoe" && Redeemed9 != "True")
         {
-            GameEvents.clicks += 5000000;
-            Generate.SoggaCost /= 2;
-            Redeemed6 = "true";
+            GameEvents.clicks += 800000000;
+            Generate.WalterCost /= 2;
+            Redeemed9 = "true";
             SaveVariables();
         }else if (Input == "AnotherUpdate" && Redeemed7 != "True")
         {
@@ -68,12 +68,12 @@ public class Codes : MonoBehaviour
     }
     void LoadVariables()
     {
-        PlayerPrefs.DeleteKey("RedeemedCodeFive");
-        string CodeSix = PlayerPrefs.GetString("RedeemedCodeSix");
+        PlayerPrefs.DeleteKey("RedeemedCodeSix");
         string CodeSeven = PlayerPrefs.GetString("RedeemedCodeSeven");
         string CodeEight = PlayerPrefs.GetString("RedeemedCodeEight");
-        Redeemed6 = CodeSix;
+        string CodeNine = PlayerPrefs.GetString("RedeemedCodeNine");
         Redeemed7 = CodeSeven;
         Redeemed8 = CodeEight;
+        Redeemed9 = CodeNine;
     }
 }

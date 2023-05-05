@@ -9584,30 +9584,18 @@ MonoBehaviour:
   m_text: 'Welcome to the newest update: Wilsonese
 
 
-    - New music added.
+    - ADDED THE BACKGROUND!
+    (finally)
+
+    - Version checker added.
+
+    - New code "BuckleMyShoe".
 
     -
-    New shop added.
-
-    - Prestige balanced.
-
-    - Ad rewards balanced.
-
-    -
-    WILSON ADDED.
-
-    - Ad rewards fixed aswell.
-
-    - New code "WilsonUpdate".
-
-    -
-    Working on better sus scores
-
-    - Removed useless crap.
 
 
-    And many more
-    things to come in the future!'
+    And
+    many more things to come in the future!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9634,7 +9622,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.9
+  m_fontSize: 22.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12241,7 +12229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1441173041
 MonoBehaviour:
   m_ObjectHideFlags: 0
