@@ -62,9 +62,9 @@ public class Codes : MonoBehaviour
     }
     public void SaveVariables()
     {
-        PlayerPrefs.SetString("RedeemedCodeSix", Redeemed6);
         PlayerPrefs.SetString("RedeemedCodeSeven", Redeemed7);
         PlayerPrefs.SetString("RedeemedCodeEight", Redeemed8);
+        PlayerPrefs.SetString("RedeemedCodeNine", Redeemed9);
     }
     void LoadVariables()
     {

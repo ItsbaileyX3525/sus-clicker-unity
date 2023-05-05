@@ -22,7 +22,7 @@ public class GameEvents : MonoBehaviour
         ClickSound = GetComponent<AudioSource>();
         LoadData();
         susText.text = "Suses: " + clicks;
-        int update1 = PlayerPrefs.GetInt("update3");
+        int update1 = PlayerPrefs.GetInt("update4");
         if (update1 != 1)
         {
             OpenLog();
@@ -138,8 +138,8 @@ public class GameEvents : MonoBehaviour
     {
         closeUpdateLog.SetActive(false);
         update1=1;
-        PlayerPrefs.SetInt("update3", update1);
-        PlayerPrefs.DeleteKey("updated2");
+        PlayerPrefs.SetInt("update4", update1);
+        PlayerPrefs.DeleteKey("updated3");
     }
     public void OpenLog()
     {
@@ -150,5 +150,4 @@ public class GameEvents : MonoBehaviour
         loadingScreen.SetActive(false);
     }
 }
-
 // delete a playerPref with PlayerPrefs.DeleteKey("myKey");do this every update.
