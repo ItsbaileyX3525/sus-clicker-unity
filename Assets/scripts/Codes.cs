@@ -42,14 +42,17 @@ public class Codes : MonoBehaviour
         {
             GameEvents.clicks += 5000000;
             Generate.SoggaCost /= 2;
+            Redeemed6 = "true";
             SaveVariables();
         }else if (Input == "AnotherUpdate" && Redeemed7 != "True")
         {
             GameEvents.clicks += 500000000;
+            Redeemed7 = "true";
             SaveVariables();
         }else if (Input == "WilsonUpdate" && Redeemed8 != "True")
         {
             GameEvents.clicks += 500000000;
+            Redeemed8 = "true";
             SaveVariables();
         }
     }

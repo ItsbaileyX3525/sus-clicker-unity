@@ -7,13 +7,13 @@ using TMPro;
 public class GameEvents : MonoBehaviour
 {
     public static ulong clicks = 0ul;
-    public GameObject loadingScreen;
-    public TMP_Text susText;
-    public TMP_Text SPS;
-    public AudioSource ClickSound;
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] TMP_Text susText;
+    [SerializeField] TMP_Text SPS;
+    [SerializeField] AudioSource ClickSound;
     private ulong sussyPerSecond;
-    public GameObject closeUpdateLog;
-    public AudioClip audioClip;
+    [SerializeField] GameObject closeUpdateLog;
+    [SerializeField] AudioClip audioClip;
     public static bool genFrezyActive = false;
     public static bool genFrezyActiveF = false;
     private int update1 = 0;
@@ -126,8 +126,13 @@ public class GameEvents : MonoBehaviour
             Generate.WalterCostPre = data.WalterCost;
             Generate.Walters = data.Walters;
         }
-
+        if (VersionChecker.correctVersion)
+        {
         loadingScreen.SetActive(false);
+        }else
+        {
+            ;
+        }
     }
     public void CloseLog()
     {
