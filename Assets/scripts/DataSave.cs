@@ -26,11 +26,14 @@ public class DataSave
     public uint Jesses;
     public float WalterCost;
     public uint Walters;
+    public float MordecaiCost;
+    public uint Mordecais;
     public DataSave(ulong suses, uint multiplier, 
     ulong multiplierCost,  uint Greens, uint Callums, uint Taylors, float GreenCost,
     float CallumCost, float TaylorCost, uint Nathaniels, float NathanielCost, uint Wilsons, float WilsonCost,
     float FloppaCost, uint Floppas, float BingusCost, uint Bingus, float SoggaCost, uint Soggas,
-    float SaulCost, uint Sauls, float JesseCost, uint Jesses, float WalterCost, uint Walters)
+    float SaulCost, uint Sauls, float JesseCost, uint Jesses, float WalterCost, uint Walters,
+    float MordecaiCost, uint Mordecais)
     {
         this.suses = suses;
         this.multiplier = multiplier;
@@ -57,5 +60,7 @@ public class DataSave
         this.Jesses = Jesses;
         this.WalterCost = WalterCost;
         this.Walters = Walters;
+        this.MordecaiCost = MordecaiCost;
+        this.Mordecais = Mordecais;
     }
 }

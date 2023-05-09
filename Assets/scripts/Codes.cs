@@ -42,17 +42,17 @@ public class Codes : MonoBehaviour
         {
             GameEvents.clicks += 800000000;
             Generate.WalterCost /= 2;
-            Redeemed9 = "true";
+            Redeemed9 = "True";
             SaveVariables();
         }else if (Input == "AnotherUpdate" && Redeemed7 != "True")
         {
             GameEvents.clicks += 500000000;
-            Redeemed7 = "true";
+            Redeemed9 = "True";
             SaveVariables();
         }else if (Input == "WilsonUpdate" && Redeemed8 != "True")
         {
             GameEvents.clicks += 500000000;
-            Redeemed8 = "true";
+            Redeemed8 = "True";
             SaveVariables();
         }
     }

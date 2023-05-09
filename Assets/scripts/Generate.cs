@@ -19,24 +19,27 @@ public class Generate : MonoBehaviour
     public static float WilsonCost = 5000.0f;
     public static uint Wilsons = 0u;
     public static float WilsonCostPre = 5000.0f;
-    public static float FloppaCost = 1000000.0f;
+    public static float FloppaCost = 20000.0f;
     public static uint Floppas = 0u;
-    public static float FloppaCostPre = 1000000.0f;
-    public static float BingusCost = 100000000.0f;
+    public static float FloppaCostPre = 20000.0f;
+    public static float BingusCost = 50000.0f;
     public static uint Bingus = 0u;
-    public static float BingusCostPre = 100000000.0f;
-    public static float SoggaCost = 500000000.0f;
+    public static float BingusCostPre = 50000.0f;
+    public static float SoggaCost = 100000.0f;
     public static uint Soggas = 0u;
-    public static float SoggaCostPre = 500000000.0f;
-    public static float SaulCost = 2000000000.0f;
+    public static float SoggaCostPre = 100000.0f;
+    public static float SaulCost = 200000.0f;
     public static uint Sauls = 0u;
-    public static float SaulCostPre = 2000000000.0f;
-    public static float JesseCost = 5000000000.0f;
+    public static float SaulCostPre = 200000.0f;
+    public static float JesseCost = 500000.0f;
     public static uint Jesses = 0u;
-    public static float JesseCostPre = 5000000000.0f;
-    public static float WalterCost = 10000000000.0f;
+    public static float JesseCostPre = 500000.0f;
+    public static float WalterCost = 1000000.0f;
     public static uint Walters = 0u;
-    public static float WalterCostPre = 10000000000.0f;
+    public static float WalterCostPre = 1000000.0f;
+    public static float MordecaiCost = 3000000.0f;
+    public static uint Mordecais = 0u;
+    public static float MordecaiCostPre = 3000000.0f;
 
     void Start()
     {
@@ -70,45 +73,51 @@ public class Generate : MonoBehaviour
         }
         if (WilsonCost == 0.0f || Wilsons == 0)
         {
-            WilsonCost = 1500.0f;
+            WilsonCost = 5000.0f;
             Wilsons = 0u;
-            WilsonCostPre = 1500.0f;
+            WilsonCostPre = 5000.0f;
         }
         if (FloppaCost == 0.0f || Floppas == 0)
         {
-            FloppaCost = 1000000.0f;
+            FloppaCost = 20000.0f;
             Floppas = 0u;
-            FloppaCostPre = 1000000.0f;
+            FloppaCostPre = 20000.0f;
         }
         if (BingusCost == 0.0f || Bingus == 0)
         {
-            BingusCost = 100000000.0f;
+            BingusCost = 50000.0f;
             Bingus = 0u;
-            BingusCostPre = 100000000.0f;
+            BingusCostPre = 50000.0f;
         }
         if (SoggaCost == 0.0f || Soggas == 0)
         {
-            SoggaCost = 500000000.0f;
+            SoggaCost = 100000.0f;
             Soggas = 0u;
-            SoggaCostPre = 500000000.0f;
+            SoggaCostPre = 100000.0f;
         }
         if (SaulCost == 0.0f || Sauls == 0)
         {
-            SaulCost = 2000000000.0f;
+            SaulCost = 200000.0f;
             Sauls = 0u;
-            SaulCostPre = 2000000000.0f;
+            SaulCostPre = 200000.0f;
         }
         if (JesseCost == 0.0f || Jesses == 0)
         {
-            JesseCost = 5000000000.0f;
+            JesseCost = 500000.0f;
             Jesses = 0u;
-            JesseCostPre = 5000000000.0f;
+            JesseCostPre = 500000.0f;
         }
         if (WalterCost == 0.0f || Walters == 0)
         {
-            WalterCost = 10000000000.0f;
+            WalterCost = 1000000.0f;
             Walters = 0u;
-            WalterCostPre = 10000000000.0f;
+            WalterCostPre = 1000000.0f;
+        }
+        if (MordecaiCost == 0.0f || Mordecais == 0)
+        {
+            MordecaiCostPre = 3000000.0f;
+            MordecaiCost = 3000000.0f;
+            Mordecais = 0u;
         }
     }
     public void onClickGreens()
@@ -221,6 +230,16 @@ public class Generate : MonoBehaviour
             Walters++;
         }
     }
+    public void onClickMordecai()
+    {
+        if (GameEvents.clicks >= MordecaiCost)
+        {
+            GameEvents.clicks -= (ulong)MordecaiCost;
+            MordecaiCostPre *= 1.1f;
+            MordecaiCost = (ulong)Math.Round(MordecaiCostPre);
+            Mordecais++;
+        }
+    }
     public static IEnumerator IncrementCountCoroutine()
     {
         while (true)
@@ -231,22 +250,24 @@ public class Generate : MonoBehaviour
             GameEvents.clicks += amount2 * GameMultiply.multiplier;
             ulong amount3 = Taylors * 8;
             GameEvents.clicks += amount3 * GameMultiply.multiplier;
-            ulong amount4 = Nathaniels * 18;
+            ulong amount4 = Nathaniels * 15;
             GameEvents.clicks += amount4 * GameMultiply.multiplier;
-            ulong amount5 = Wilsons * 45;
+            ulong amount5 = Wilsons * 25;
             GameEvents.clicks += amount5 * GameMultiply.multiplier;
-            ulong amount6 = Floppas * 1000;
+            ulong amount6 = Floppas * 450;
             GameEvents.clicks += amount6 * GameMultiply.multiplier;
-            ulong amount7 = Bingus * 5000;
+            ulong amount7 = Bingus * 800;
             GameEvents.clicks += amount7 * GameMultiply.multiplier;
-            ulong amount8 = Soggas * 12000;
+            ulong amount8 = Soggas * 1200;
             GameEvents.clicks += amount8 * GameMultiply.multiplier;
-            ulong amount9 = Sauls * 20000;
+            ulong amount9 = Sauls * 4000;
             GameEvents.clicks += amount9 * GameMultiply.multiplier;
-            ulong amount10 = Jesses * 30000;
+            ulong amount10 = Jesses * 7000;
             GameEvents.clicks += amount10 * GameMultiply.multiplier;
-            ulong amount11 = Walters * 50000;
+            ulong amount11 = Walters * 12000;
             GameEvents.clicks += amount11 * GameMultiply.multiplier;
+            ulong amount12 = Mordecais * 32000;
+            GameEvents.clicks += amount12 * GameMultiply.multiplier;
             if (GameEvents.genFrezyActive){
                 yield return new WaitForSeconds(0.5f);
             }else{

@@ -68,7 +68,7 @@ public class GameEvents : MonoBehaviour
         Generate.Nathaniels, Generate.NathanielCost, Generate.Wilsons, Generate.WilsonCost, 
         Generate.FloppaCost,Generate.Floppas, Generate.BingusCost,Generate.Bingus,
         Generate.SoggaCost,Generate.Soggas,Generate.SaulCost,Generate.Sauls,
-        Generate.JesseCost,Generate.Jesses,Generate.WalterCost,Generate.Walters);
+        Generate.JesseCost,Generate.Jesses,Generate.WalterCost,Generate.Walters, Generate.MordecaiCost,Generate.Mordecais);
 
         // Convert the instance to JSON and save to file
         string json = JsonUtility.ToJson(data);
@@ -125,6 +125,9 @@ public class GameEvents : MonoBehaviour
             Generate.WalterCost = data.WalterCost;
             Generate.WalterCostPre = data.WalterCost;
             Generate.Walters = data.Walters;
+            Generate.MordecaiCost = data.MordecaiCost;
+            Generate.MordecaiCostPre = data.MordecaiCost;
+            Generate.Mordecais = data.Mordecais;
         }
         if (VersionChecker.correctVersion)
         {

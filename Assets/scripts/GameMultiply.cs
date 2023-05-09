@@ -27,7 +27,7 @@ public class GameMultiply : MonoBehaviour
 
             GameEvents.clicks = 0;
             multiplier++;
-            cost *= 3;
+            cost *= 2;
         }
     }
 public static string FormatNumberWithAbbreviation(double number)
