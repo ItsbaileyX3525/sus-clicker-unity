@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class VersionChecker : MonoBehaviour
 {
-    private const string CURRENT_VER = "V2.2";
+    private const string CURRENT_VER = "V2.5";
     public static bool correctVersion = true;
     [SerializeField] GameObject loadingScreen;
 

@@ -12,7 +12,7 @@ public class BackgroundSus : MonoBehaviour {
     }
     void Update()
     {
-        uint before = Generate.Greens * 2 + Generate.Callums * 4 + Generate.Taylors * 8 + Generate.Nathaniels * 18 + Generate.Floppas * 1000 + Generate.Bingus * 5000;
+        uint before = Generate.Greens * 2 + Generate.Callums * 5 + Generate.Taylors * 12 + Generate.Nathaniels * 25 + Generate.Wilsons * 60 + Generate.Floppas * 130 + Generate.Bingus * 250 + Generate.Soggas * 520 + Generate.Sauls * 1050 + Generate.Jesses * 2200 + Generate.Walters * 4500 + Generate.Mordecais * 9200 + Generate.Rigbys * 18500 + Generate.Bensons * 37500 + Generate.MMs * 76000;
         clickValue = before * GameMultiply.multiplier * 5;
     }
 

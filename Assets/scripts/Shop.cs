@@ -11,11 +11,13 @@ public class Shop : MonoBehaviour
     [SerializeField] GameObject Leaderboard_button;
     [SerializeField] GameObject memeShop;
     [SerializeField] GameObject breakingBadShop;
+    [SerializeField] GameObject regularShowShop;
     void Start()
     {
         shopSelection.SetActive(false);
         memeShop.SetActive(false);
         breakingBadShop.SetActive(false);
+        regularShowShop.SetActive(false);
     }
 
     public void OpenShop()
@@ -67,6 +69,15 @@ public class Shop : MonoBehaviour
         }else
         {
             breakingBadShop.SetActive(true);
+            shopSelection.SetActive(false);
+        }
+    }
+    public void OpenRegularShowShop() {
+        if (regularShowShop.activeSelf) {
+            regularShowShop.SetActive(false);
+            shopSelection.SetActive(true);
+        }else {
+            regularShowShop.SetActive(true);
             shopSelection.SetActive(false);
         }
     }

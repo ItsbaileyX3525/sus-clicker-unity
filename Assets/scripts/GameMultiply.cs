@@ -3,19 +3,23 @@ using TMPro;
 
 public class GameMultiply : MonoBehaviour
 {
-    public TMP_Text Gen1;
-    public TMP_Text susMultiply;
-    public TMP_Text multiplierText;
-    public TMP_Text Gen2;
-    public TMP_Text Gen3;
-    public TMP_Text Gen4;
-    public TMP_Text Gen5;
-    public TMP_Text GenFloppa;
-    public TMP_Text GenBingus;
-    public TMP_Text GenSogga;
-    public TMP_Text GenSaul;
-    public TMP_Text GenJesse;
-    public TMP_Text GenWalter;
+    [SerializeField] TMP_Text Gen1;
+    [SerializeField] TMP_Text susMultiply;
+    [SerializeField] TMP_Text multiplierText;
+    [SerializeField] TMP_Text Gen2;
+    [SerializeField] TMP_Text Gen3;
+    [SerializeField] TMP_Text Gen4;
+    [SerializeField] TMP_Text Gen5;
+    [SerializeField] TMP_Text GenFloppa;
+    [SerializeField] TMP_Text GenBingus;
+    [SerializeField] TMP_Text GenSogga;
+    [SerializeField] TMP_Text GenSaul;
+    [SerializeField] TMP_Text GenJesse;
+    [SerializeField] TMP_Text GenWalter;
+    [SerializeField] TMP_Text GenMordecai;
+    [SerializeField] TMP_Text GenRigby;
+    [SerializeField] TMP_Text GenBenson;
+    [SerializeField] TMP_Text GenMM;
     public static uint multiplier;
     public static bool Prestiging = false;
     public static ulong cost = 250ul;
@@ -82,6 +86,10 @@ public static string FormatNumberWithAbbreviation(double number)
         string fromattedSaulCost = FormatNumberWithAbbreviation(Generate.SaulCost);
         string fromattedJesseCost = FormatNumberWithAbbreviation(Generate.JesseCost);
         string fromattedWalterCost = FormatNumberWithAbbreviation(Generate.WalterCost);
+        string fromattedMordecaiCost = FormatNumberWithAbbreviation(Generate.MordecaiCost);
+        string fromattedRigbyCost = FormatNumberWithAbbreviation(Generate.RigbyCost);
+        string fromattedBensonCost = FormatNumberWithAbbreviation(Generate.BensonCost);
+        string fromattedMMCost = FormatNumberWithAbbreviation(Generate.MMCost);
         string formattedPrestigeCost = FormatNumberWithAbbreviation(cost);
 
         susMultiply.text = "Prestige cost: " + formattedPrestigeCost;
@@ -97,6 +105,10 @@ public static string FormatNumberWithAbbreviation(double number)
         GenSaul.text = "Cost: " + fromattedSaulCost;
         GenJesse.text = "Cost: " + fromattedJesseCost;
         GenWalter.text = "Cost: " + fromattedWalterCost;
+        GenMordecai.text = "Cost: " + fromattedMordecaiCost;
+        GenRigby.text = "Cost: " + fromattedRigbyCost;
+        GenBenson.text = "Cost: " + fromattedBensonCost;
+        GenMM.text = "Cost: " + fromattedMMCost;
         if (cost == 0)
         {
             cost = 250;

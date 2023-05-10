@@ -17,12 +17,13 @@ public class GameEvents : MonoBehaviour
     public static bool genFrezyActive = false;
     public static bool genFrezyActiveF = false;
     private int update1 = 0;
+    private bool PreUpdate = false;
     void Start()
     {
         ClickSound = GetComponent<AudioSource>();
         LoadData();
         susText.text = "Suses: " + clicks;
-        int update1 = PlayerPrefs.GetInt("update4");
+        int update1 = PlayerPrefs.GetInt("update5");
         if (update1 != 1)
         {
             OpenLog();
@@ -34,7 +35,8 @@ public class GameEvents : MonoBehaviour
     {
         string clicksFormatted = GameMultiply.FormatNumberWithAbbreviation(clicks);
         susText.text = "Suses: " + clicksFormatted;
-        sussyPerSecond =  Generate.Taylors*8*GameMultiply.multiplier+Generate.Callums*4*GameMultiply.multiplier+Generate.Greens*2*GameMultiply.multiplier+Generate.Nathaniels*18*GameMultiply.multiplier+Generate.Floppas*1000*GameMultiply.multiplier+Generate.Bingus*5000*GameMultiply.multiplier+Generate.Sauls*20000*GameMultiply.multiplier+Generate.Jesses*30000*GameMultiply.multiplier+Generate.Walters*50000*GameMultiply.multiplier;
+        sussyPerSecond =  Generate.Greens * 2 + Generate.Callums * 5 + Generate.Taylors * 12 + Generate.Nathaniels * 25 + Generate.Wilsons * 60 + Generate.Floppas * 130 + Generate.Bingus * 250 + Generate.Soggas * 520 + Generate.Sauls * 1050 + Generate.Jesses * 2200 + Generate.Walters * 4500 + Generate.Mordecais * 9200;
+        sussyPerSecond *= GameMultiply.multiplier;
         string FormattedSps = GameMultiply.FormatNumberWithAbbreviation(sussyPerSecond);
         SPS.text = "Suses p/s: " + FormattedSps;
         SaveData();
@@ -53,8 +55,8 @@ public class GameEvents : MonoBehaviour
     {
         if(!Shop.inShop && !AdShops.inAdShop)
         {
-            uint before = Generate.Greens + Generate.Callums + Generate.Taylors + Generate.Nathaniels + Generate.Floppas + Generate.Bingus;
-            clicks += 1 + before * 2 * GameMultiply.multiplier;
+            uint before = Generate.Greens + Generate.Callums + Generate.Taylors + Generate.Nathaniels + Generate.Wilsons + Generate.Floppas + Generate.Bingus + Generate.Soggas + Generate.Sauls + Generate.Jesses + Generate.Walters + Generate.Mordecais + Generate.Rigbys + Generate.Bensons + Generate.MMs;
+            clicks += 1 + before * GameMultiply.multiplier;
             audioClip = ClickSound.clip;
             ClickSound.PlayOneShot(audioClip);
         }
@@ -68,7 +70,8 @@ public class GameEvents : MonoBehaviour
         Generate.Nathaniels, Generate.NathanielCost, Generate.Wilsons, Generate.WilsonCost, 
         Generate.FloppaCost,Generate.Floppas, Generate.BingusCost,Generate.Bingus,
         Generate.SoggaCost,Generate.Soggas,Generate.SaulCost,Generate.Sauls,
-        Generate.JesseCost,Generate.Jesses,Generate.WalterCost,Generate.Walters, Generate.MordecaiCost,Generate.Mordecais);
+        Generate.JesseCost,Generate.Jesses,Generate.WalterCost,Generate.Walters, Generate.MordecaiCost,Generate.Mordecais,
+        Generate.RigbyCost,Generate.Rigbys,Generate.BensonCost,Generate.Bensons,Generate.MMCost,Generate.MMs);
 
         // Convert the instance to JSON and save to file
         string json = JsonUtility.ToJson(data);
@@ -98,36 +101,30 @@ public class GameEvents : MonoBehaviour
             Generate.gen1Cost = data.GreenCost;
             Generate.CallumCost = data.CallumCost;
             Generate.TaylorCost = data.TaylorCost;
-            Generate.gen1CostPre = data.GreenCost;
-            Generate.CallumCostPre = data.CallumCost;
-            Generate.TaylorCostPre = data.TaylorCost;
             Generate.NathanielCost = data.NathanielCost;
-            Generate.NathanielCostPre = data.NathanielCost;
             Generate.Nathaniels = data.Nathaniels;
             Generate.WilsonCost = data.WilsonCost;
-            Generate.WilsonCostPre = data.WilsonCost;
             Generate.Wilsons = data.Wilsons;
             Generate.FloppaCost = data.FloppaCost;
-            Generate.FloppaCostPre = data.FloppaCost;
             Generate.Floppas = data.Floppas;
             Generate.BingusCost = data.BingusCost;
-            Generate.BingusCostPre = data.BingusCost;
             Generate.Bingus = data.Bingus;
             Generate.SoggaCost = data.SoggaCost;
-            Generate.SoggaCostPre = data.SoggaCost;
             Generate.Soggas = data.Soggas;
             Generate.SaulCost = data.SaulCost;
-            Generate.SaulCostPre = data.SaulCost;
             Generate.Sauls = data.Sauls;
             Generate.JesseCost = data.JesseCost;
-            Generate.JesseCostPre = data.JesseCost;
             Generate.Jesses = data.Jesses;
             Generate.WalterCost = data.WalterCost;
-            Generate.WalterCostPre = data.WalterCost;
             Generate.Walters = data.Walters;
             Generate.MordecaiCost = data.MordecaiCost;
-            Generate.MordecaiCostPre = data.MordecaiCost;
             Generate.Mordecais = data.Mordecais;
+            Generate.RigbyCost = data.RigbyCost;
+            Generate.Rigbys = data.Rigbys;
+            Generate.BensonCost = data.BensonCost;
+            Generate.Bensons = data.Bensons;
+            Generate.MMCost = data.MMCost;
+            Generate.MMs = data.MMs;
         }
         if (VersionChecker.correctVersion)
         {
@@ -141,8 +138,8 @@ public class GameEvents : MonoBehaviour
     {
         closeUpdateLog.SetActive(false);
         update1=1;
-        PlayerPrefs.SetInt("update4", update1);
-        PlayerPrefs.DeleteKey("updated3");
+        PlayerPrefs.SetInt("update5", update1);
+        PlayerPrefs.DeleteKey("updated4");
     }
     public void OpenLog()
     {

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ClickSounds : MonoBehaviour
 {
-    public AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
 
-    public AudioClip audioClip1;
-    public AudioClip audioClip2;
-    public AudioClip audioClip3;
+    [SerializeField] AudioClip audioClip1;
+    [SerializeField] AudioClip audioClip2;
+    [SerializeField] AudioClip audioClip3;
 
     public void HandleInputData(int val)
     {

@@ -2,9 +2,9 @@ using UnityEngine;
 public class Codes : MonoBehaviour
 {
     private string Input;
-    private string Redeemed7;
     private string Redeemed8;
     private string Redeemed9;
+    private string Redeemed10;
     public void InputText(string s)
     {
         Input = s;
@@ -13,46 +13,27 @@ public class Codes : MonoBehaviour
             GameEvents.clicks = 0ul;
             GameMultiply.multiplier = 1u;
             GameMultiply.cost = 250ul;
-            Generate.gen1Cost = 50.0f;
+            Generate.gen1Cost = 50ul;
             Generate.Greens = 0u;
-            Generate.gen1CostPre = 50.0f;
             Generate.Taylors = 0u;
-            Generate.TaylorCost = 600.0f;
-            Generate.TaylorCostPre = 600.0f;            
-            Generate.CallumCost = 200.0f;
+            Generate.TaylorCost = 600ul;
+            Generate.CallumCost = 200ul;
             Generate.Callums = 0u;
-            Generate.CallumCostPre = 200.0f;
-            Generate.NathanielCost = 1500.0f;
+            Generate.NathanielCost = 1500ul;
             Generate.Nathaniels = 0u;
-            Generate.NathanielCostPre = 1500.0f;
-            Generate.FloppaCost = 1000000.0f;
-            Generate.FloppaCostPre = 1000000.0f;
+            Generate.FloppaCost = 1000000ul;
             Generate.Floppas = 0u;
-            Generate.BingusCost = 100000000.0f;
-            Generate.BingusCostPre = 100000000.0f;
+            Generate.BingusCost = 100000000ul;
             Generate.Bingus = 0u;
-            Generate.SoggaCost = 500000000.0f;
-            Generate.SoggaCostPre = 500000000.0f;
+            Generate.SoggaCost = 500000000ul;
             Generate.Soggas = 0u;
-            Generate.SaulCost = 2000000000.0f;
-            Generate.SaulCostPre = 2000000000.0f;
+            Generate.SaulCost = 2000000000ul;
             Generate.Sauls = 0u;
         }
-        if (Input == "BuckleMyShoe" && Redeemed9 != "True")
+        if (Input == "BigHugeUpdate" && Redeemed10 != "True")
         {
-            GameEvents.clicks += 800000000;
-            Generate.WalterCost /= 2;
-            Redeemed9 = "True";
-            SaveVariables();
-        }else if (Input == "AnotherUpdate" && Redeemed7 != "True")
-        {
-            GameEvents.clicks += 500000000;
-            Redeemed9 = "True";
-            SaveVariables();
-        }else if (Input == "WilsonUpdate" && Redeemed8 != "True")
-        {
-            GameEvents.clicks += 500000000;
-            Redeemed8 = "True";
+            GameEvents.clicks += 1000000;
+            Redeemed10 = "True";
             SaveVariables();
         }
     }
@@ -62,18 +43,14 @@ public class Codes : MonoBehaviour
     }
     public void SaveVariables()
     {
-        PlayerPrefs.SetString("RedeemedCodeSeven", Redeemed7);
-        PlayerPrefs.SetString("RedeemedCodeEight", Redeemed8);
-        PlayerPrefs.SetString("RedeemedCodeNine", Redeemed9);
+        PlayerPrefs.SetString("RedeemedCodeTen", Redeemed10);
     }
     void LoadVariables()
     {
-        PlayerPrefs.DeleteKey("RedeemedCodeSix");
-        string CodeSeven = PlayerPrefs.GetString("RedeemedCodeSeven");
-        string CodeEight = PlayerPrefs.GetString("RedeemedCodeEight");
-        string CodeNine = PlayerPrefs.GetString("RedeemedCodeNine");
-        Redeemed7 = CodeSeven;
-        Redeemed8 = CodeEight;
-        Redeemed9 = CodeNine;
+        PlayerPrefs.DeleteKey("RedeemedCodeSeven");
+        PlayerPrefs.DeleteKey("RedeemedCodeEight");
+        PlayerPrefs.DeleteKey("RedeemedCodeNine");
+        string CodeTen = PlayerPrefs.GetString("RedeemedCodeTen");
+        Redeemed10 = CodeTen;
     }
 }

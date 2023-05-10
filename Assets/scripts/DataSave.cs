@@ -7,33 +7,40 @@ public class DataSave
     public uint Callums;
     public uint Taylors;
     public uint Greens;
-    public float GreenCost;
-    public float CallumCost;
-    public float TaylorCost;
+    public ulong GreenCost;
+    public ulong CallumCost;
+    public ulong TaylorCost;
     public uint Nathaniels;
-    public float NathanielCost;
+    public ulong NathanielCost;
     public uint Wilsons;
-    public float WilsonCost;
-    public float FloppaCost;
+    public ulong WilsonCost;
+    public ulong FloppaCost;
     public uint Floppas;
-    public float BingusCost;
+    public ulong BingusCost;
     public uint Bingus;
-    public float SoggaCost;
+    public ulong SoggaCost;
     public uint Soggas;
-    public float SaulCost;
+    public ulong SaulCost;
     public uint Sauls;
-    public float JesseCost;
+    public ulong JesseCost;
     public uint Jesses;
-    public float WalterCost;
+    public ulong WalterCost;
     public uint Walters;
-    public float MordecaiCost;
+    public ulong MordecaiCost;
     public uint Mordecais;
+    public ulong RigbyCost;
+    public uint Rigbys;
+    public ulong BensonCost;
+    public uint Bensons;
+    public ulong MMCost;
+    public uint MMs;
     public DataSave(ulong suses, uint multiplier, 
-    ulong multiplierCost,  uint Greens, uint Callums, uint Taylors, float GreenCost,
-    float CallumCost, float TaylorCost, uint Nathaniels, float NathanielCost, uint Wilsons, float WilsonCost,
-    float FloppaCost, uint Floppas, float BingusCost, uint Bingus, float SoggaCost, uint Soggas,
-    float SaulCost, uint Sauls, float JesseCost, uint Jesses, float WalterCost, uint Walters,
-    float MordecaiCost, uint Mordecais)
+    ulong multiplierCost,  uint Greens, uint Callums, uint Taylors, ulong GreenCost,
+    ulong CallumCost, ulong TaylorCost, uint Nathaniels, ulong NathanielCost, uint Wilsons, ulong WilsonCost,
+    ulong FloppaCost, uint Floppas, ulong BingusCost, uint Bingus, ulong SoggaCost, uint Soggas,
+    ulong SaulCost, uint Sauls, ulong JesseCost, uint Jesses, ulong WalterCost, uint Walters,
+    ulong MordecaiCost, uint Mordecais, ulong RigbyCost, uint Rigbys, ulong BensonCost, uint Bensons,
+    ulong MMCost, uint MMs)
     {
         this.suses = suses;
         this.multiplier = multiplier;
@@ -62,5 +69,11 @@ public class DataSave
         this.Walters = Walters;
         this.MordecaiCost = MordecaiCost;
         this.Mordecais = Mordecais;
+        this.RigbyCost = RigbyCost;
+        this.Rigbys = Rigbys;
+        this.BensonCost = BensonCost;
+        this.Bensons = Bensons;
+        this.MMCost = MMCost;
+        this.MMs = MMs;
     }
 }

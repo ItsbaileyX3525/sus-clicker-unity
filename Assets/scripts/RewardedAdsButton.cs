@@ -126,17 +126,18 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         }
         if (adUnitId.Equals(_adUnitId3) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            Generate.gen1Cost = Generate.gen1Cost / 2;
-            Generate.CallumCost = Generate.CallumCost / 2;
-            Generate.TaylorCost = Generate.TaylorCost / 2;
-            Generate.NathanielCost = Generate.NathanielCost / 2;
-            Generate.WilsonCost = Generate.WilsonCost / 2;
-            Generate.FloppaCost = Generate.FloppaCost / 2;
-            Generate.BingusCost = Generate.BingusCost / 2;
-            Generate.SoggaCost = Generate.SoggaCost / 2;
-            Generate.SaulCost = Generate.SaulCost / 2;
-            Generate.JesseCost = Generate.JesseCost / 2;
-            Generate.WalterCost = Generate.WalterCost / 2;
+            Generate.gen1Cost /= 2;
+            Generate.CallumCost /= 2;
+            Generate.TaylorCost /= 2;
+            Generate.NathanielCost /= 2;
+            Generate.WilsonCost /= 2;
+            Generate.FloppaCost /= 2;
+            Generate.BingusCost /= 2;
+            Generate.SoggaCost /= 2;
+            Generate.SaulCost /= 2;
+            Generate.JesseCost /= 2;
+            Generate.WalterCost /= 2;
+            Generate.MordecaiCost /= 2;
             Advertisement.Load(_adUnitId3, this);
         }
     }
