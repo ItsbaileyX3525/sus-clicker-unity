@@ -34,12 +34,10 @@ public class Generate : MonoBehaviour
     public static uint Bensons = 0u;
     public static ulong MMCost = 19000000ul;
     public static uint MMs = 0u;
-    private string PreUpdate = "False";
 
     void Start()
     {
         StartCoroutine(IncrementCountCoroutine());
-        PreUpdate = PlayerPrefs.GetString("PreUpdate");
     }
     void Update()
     {
@@ -90,42 +88,7 @@ public class Generate : MonoBehaviour
             RigbyCost = 3000000ul;
             Rigbys = 0u;
         }
-        if (PreUpdate == "False") {
-                gen1Cost = 50ul;
-                Greens = 0u;
-                CallumCost = 150ul;
-                Callums = 0u;
-                TaylorCost = 300ul;
-                Taylors = 0u;
-                NathanielCost = 800ul;
-                Nathaniels = 0u;
-                WilsonCost = 2000ul;
-                Wilsons = 0u;
-                FloppaCost = 5000ul;
-                Floppas = 0u;
-                BingusCost = 12000ul;
-                Bingus = 0u;
-                SoggaCost = 30000ul;
-                Soggas = 0u;
-                SaulCost = 80000ul;
-                Sauls = 0u;
-                JesseCost = 200000ul;
-                Jesses = 0u;
-                WalterCost = 500000ul;
-                Walters = 0u;
-                MordecaiCost = 1200000ul;
-                Mordecais = 0u;
-                RigbyCost = 3000000ul;
-                Rigbys = 0u;
-                BensonCost = 7500000ul;
-                Bensons = 0u;
-                MMCost = 19000000ul;
-                MMs = 0u;
-                Debug.Log("Reset");
-                GameEvents.clicks = 0;
-                PreUpdate = "True";
-                PlayerPrefs.SetString("PreUpdate", "True");
-        }
+        
     }
     public void onClickGreens()
     {

@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class VersionChecker : MonoBehaviour
 {
-    private const string CURRENT_VER = "V2.5";
+    private const string CURRENT_VER = "V2.5.1";
     public static bool correctVersion = true;
     [SerializeField] GameObject loadingScreen;
 
@@ -15,7 +15,7 @@ public class VersionChecker : MonoBehaviour
 
     private IEnumerator CheckVersion()
     {
-        string latestVersionUrl = "https://raw.githubusercontent.com/ItsbaileyX3525/Bailey.github.io/main/SusClickerVersion.txt";
+        string latestVersionUrl = "https://raw.githubusercontent.com/ItsbaileyX3525/sus-clicker-unity/main/SusClickerVersion.txt";
 
         UnityWebRequest request = UnityWebRequest.Get(latestVersionUrl);
 
@@ -32,21 +32,19 @@ public class VersionChecker : MonoBehaviour
             if (CURRENT_VER != latestVersion)
             {
                 Debug.Log("Wrong version");
-                Debug.Log(latestVersion);
                 correctVersion = false;
                 loadingScreen.SetActive(true);
             }
             else
             {
                 Debug.Log("Right version");
-                Debug.Log(latestVersion);
                 correctVersion = true;
                 loadingScreen.SetActive(false);
-            }
+            }Debug.Log(latestVersion);
         }
     }
     public void beanos()
     {
-        Application.OpenURL("https://github.com/ItsbaileyX3525/Bailey.github.io/blob/main/sus%20clicker.apk");
+        Application.OpenURL("https://baileyswebsite.ddns.net/Download");
     }
 }

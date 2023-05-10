@@ -17,7 +17,6 @@ public class GameEvents : MonoBehaviour
     public static bool genFrezyActive = false;
     public static bool genFrezyActiveF = false;
     private int update1 = 0;
-    private bool PreUpdate = false;
     void Start()
     {
         ClickSound = GetComponent<AudioSource>();
@@ -75,7 +74,7 @@ public class GameEvents : MonoBehaviour
 
         // Convert the instance to JSON and save to file
         string json = JsonUtility.ToJson(data);
-        string filePath = Application.persistentDataPath + "/data1.json";
+        string filePath = Application.persistentDataPath + "/data2.json";
         File.WriteAllText(filePath, json);
     }
 
@@ -85,7 +84,7 @@ public class GameEvents : MonoBehaviour
         loadingScreen.SetActive(true);
 
         // Load data from file
-        string filePath = Application.persistentDataPath + "/data1.json";
+        string filePath = Application.persistentDataPath + "/data2.json";
         if (File.Exists(filePath))
         {
             string json = await Task.Run(() => File.ReadAllText(filePath));
